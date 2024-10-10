@@ -1,0 +1,20 @@
+const url='https://raw.githubusercontent.com/rayssa0102
+
+async fuction vizualizarinformacoesGlobais() {
+    const res=await fetch(url)
+    const dados=await res.json()
+    const pessoasConectadas= (dados.total_pessoas_conectadas/1e9)
+    const pessoasNoMundo= (dados.total_pessoas_mundo/1e9)
+    const horas= parseint(dados.tempo_medio)
+    const minutos = math.roud((pessoasConectadas/pessoasNomundo)*100)
+     cont porcentagemaConectada=((pessiasConectadas/ pessoasNoMundo)*100)
+
+     conts paragrafo=document.createElement('p')
+     paragrafo.classList.add(grafico-container__texto')
+     paragrafo.innerHTML= voce sabia que o mundontem <span>${pessoasNomundo}bilhoes
+
+     const container= document.getElementByid('graficos-container')
+     container.appendChild(paragrafo)
+}
+
+vizualizarinformacoesGlobais()
