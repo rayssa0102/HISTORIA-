@@ -1,22 +1,22 @@
-imort{getCCS, tickCofig} from "./common.js"
+import {getCCS, tickCofig} from "./common.js"
 
 async function quantidadedeUsuarioporrede() {
-    cont url ='https://raw.githubusercontent.comhttps://github.com/rayssa0102/HISTORIA-/'
-    cont res= await fetch(url)
-    cont dados = await res.Json()
-    cont nomeDasRedes= Object.values(dados)
+    const url ='https://raw.githubusercontent.comhttps://github.com/rayssa0102/HISTORIA-/'
+    const res= await fetch(url)
+    const dados = await res.Json()
+    const nomeDasRedes= Object.values(dados)
     const quantidadedeUsuario =Object.values(dados)
 
-    const data =[
+    const data = [
         {
-            x:nomeDasRedes
-            y:quantidadedeUsuario
+            x:nomeDasRedes ,
+            y: quantidadedeUsuario ,
             type: 'bar',
             marker:{
                 color:getCCS('--primary-color')
             }
         }
-    }
+    ]
 
     const laytout={
         plot_bgcolor:getCCS('--bg-color'),
@@ -53,12 +53,7 @@ async function quantidadedeUsuarioporrede() {
     const grafico =document.createElement('div')
     grafico.className='grafico'
     document.getElementById('graficos-container').appendChild(grafico)
-    plotly.const plot(grafico,data,laytout) 
+    Plotly. newPlot(grafico,data,laytout) 
 }
 
 quantidadedeUsuarioporrede()
-
-        
-
-    
-}
